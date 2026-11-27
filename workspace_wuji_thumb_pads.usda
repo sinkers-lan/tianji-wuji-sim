@@ -1,0 +1,126 @@
+#usda 1.0
+(
+    doc = "Official Wuji Hand 1 thumb pads. Contact coefficients are simulation estimates."
+)
+
+def "Workspace"
+{
+    def "Materials"
+    {
+        def Material "WujiThumbContact" (
+            prepend apiSchemas = ["PhysicsMaterialAPI", "PhysxMaterialAPI"]
+            doc = "Initial contact estimates: 1 N over 0.5 mm; damping near critical for a 30 g object. Values are uncalibrated."
+        )
+        {
+            float physics:dynamicFriction = 0.8
+            float physics:staticFriction = 1
+            float physxMaterial:compliantContactDamping = 15
+            float physxMaterial:compliantContactStiffness = 2000
+        }
+    }
+
+    def "Robot"
+    {
+        def "Wuji_left"
+        {
+            def Xform "left_finger1_link2_softbody" (
+                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+            )
+            {
+                point3f physics:centerOfMass = (0.0020603596, -0.00036800792, 0.013097054)
+                float3 physics:diagonalInertia = (0.0000012290686, 0.0000012646437, 0.00000163312)
+                rel physics:filteredPairs = [
+                    </Workspace/Robot/Wuji_left/left_palm_link>,
+                    </Workspace/Robot/Wuji_left/left_finger1_link3>,
+                ]
+                float physics:mass = 0.0085512595
+                quatf physics:principalAxes = (0.9471496, 0.16171823, 0.218532, 0.1702902)
+                matrix4d xformOp:transform = ( (-0.9032215817117459, -0.26596613048387724, -0.3368276281067635, 0), (0.3084768167057423, 0.14332743570302234, -0.9403719221146624, 0), (0.29838356873683436, -0.953267660916312, -0.047412035358607656, 0), (0.634343825196668, 0.18952204443441312, -0.635586162291798, 0.9999999999999996) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def Mesh "Visual" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                    prepend references = @official_wuji/thumb_pad_geometry.usdc@</LeftThumbPad>
+                )
+                {
+                    rel material:binding = </Workspace/Robot/Wuji_left/Looks/BlackGlove>
+                }
+
+                def Mesh "Collision" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                    prepend references = @official_wuji/thumb_pad_geometry.usdc@</LeftThumbPad>
+                )
+                {
+                    rel material:binding:physics = </Workspace/Materials/WujiThumbContact>
+                    uniform token physics:approximation = "convexHull"
+                    token visibility = "invisible"
+                }
+            }
+
+            def "joints"
+            {
+                def PhysicsFixedJoint "left_finger1_joint2_softbody"
+                {
+                    rel physics:body0 = </Workspace/Robot/Wuji_left/left_finger1_link2>
+                    rel physics:body1 = </Workspace/Robot/Wuji_left/left_finger1_link2_softbody>
+                    bool physics:collisionEnabled = 0
+                    point3f physics:localPos0 = (0, 0, 0)
+                    point3f physics:localPos1 = (0, 0, 0)
+                    quatf physics:localRot0 = (1, 0, 0, 0)
+                    quatf physics:localRot1 = (1, 0, 0, 0)
+                }
+            }
+        }
+
+        def "Wuji_right"
+        {
+            def Xform "right_finger1_link2_softbody" (
+                prepend apiSchemas = ["PhysicsRigidBodyAPI", "PhysicsMassAPI", "PhysicsFilteredPairsAPI"]
+            )
+            {
+                point3f physics:centerOfMass = (-0.0020592536, -0.00036696094, 0.013097733)
+                float3 physics:diagonalInertia = (0.000001229242, 0.0000012650003, 0.0000016334702)
+                rel physics:filteredPairs = [
+                    </Workspace/Robot/Wuji_right/right_palm_link>,
+                    </Workspace/Robot/Wuji_right/right_finger1_link3>,
+                ]
+                float physics:mass = 0.008553168
+                quatf physics:principalAxes = (0.9476935, 0.1610214, -0.21891584, -0.1674066)
+                matrix4d xformOp:transform = ( (-0.38167717760688225, 0.900421194027657, 0.20872024694191385, 0), (0.9237303075427248, 0.36369362027569785, 0.12020537487344536, 0), (0.032325296731288394, 0.23868084167204187, -0.9705599066083671, 0), (0.2359371852670723, 0.6333084753731435, -0.6578029113659192, 0.9999999999999996) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+
+                def Mesh "Visual" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                    prepend references = @official_wuji/thumb_pad_geometry.usdc@</RightThumbPad>
+                )
+                {
+                    rel material:binding = </Workspace/Robot/Wuji_right/Looks/BlackGlove>
+                }
+
+                def Mesh "Collision" (
+                    prepend apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+                    prepend references = @official_wuji/thumb_pad_geometry.usdc@</RightThumbPad>
+                )
+                {
+                    rel material:binding:physics = </Workspace/Materials/WujiThumbContact>
+                    uniform token physics:approximation = "convexHull"
+                    token visibility = "invisible"
+                }
+            }
+
+            def "joints"
+            {
+                def PhysicsFixedJoint "right_finger1_joint2_softbody"
+                {
+                    rel physics:body0 = </Workspace/Robot/Wuji_right/right_finger1_link2>
+                    rel physics:body1 = </Workspace/Robot/Wuji_right/right_finger1_link2_softbody>
+                    bool physics:collisionEnabled = 0
+                    point3f physics:localPos0 = (0, 0, 0)
+                    point3f physics:localPos1 = (0, 0, 0)
+                    quatf physics:localRot0 = (1, 0, 0, 0)
+                    quatf physics:localRot1 = (1, 0, 0, 0)
+                }
+            }
+        }
+    }
+}
