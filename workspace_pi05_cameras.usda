@@ -106,8 +106,9 @@ over "Workspace"
                 float verticalAperture = 58.538963
                 quatd xformOp:orient = (-0.4130000174045563, 0.4923436939716339, 0.4925634562969208, 0.5868644714355469)
                 double3 xformOp:scale = (1, 1, 1)
+                matrix4d xformOp:transform = ( (-0.9847354814526802, 0.00027095119154436356, -0.1740573415676863, 0), (-0.1714600793525074, -0.1736244505933202, 0.9697711025518344, 0), (-0.02995784966566115, 0.9848118991673586, 0.17102061425977297, 0), (-0.002867102622985872, -0.10232651233673098, 0.0680411458015442, 1) )
                 double3 xformOp:translate = (0.06804114580154419, -0.10232651233673096, 0.00286710262298584)
-                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+                uniform token[] xformOpOrder = ["xformOp:transform"]
             }
         }
     }

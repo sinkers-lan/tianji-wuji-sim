@@ -1,7 +1,7 @@
 """Source embedded as text in the USD Action Graph."""
 import numpy as np
+import omni.physics.core
 import omni.physics.tensors as tensors
-import omni.timeline
 import omni.usd
 
 
@@ -27,17 +27,33 @@ def initialize(state, context, ratios):
     return True
 
 
-def compute(db):
-    if not omni.timeline.get_timeline_interface().is_playing():
-        return True
-    context = omni.usd.get_context()
-    state = db.per_instance_state
+def apply_control(state):
+    if state.context.get_stage() != state.stage:
+        return
     art = getattr(state, "art", None)
     if art is None or not art.check():
-        if not initialize(state, context, db.inputs.dampingRatios):
-            return True
+        if not initialize(state, state.context, state.ratios):
+            return
         art = state.art
     inds = state.arm_indices
     state.efforts[0, inds] = art.get_gravity_compensation_forces()[0, inds]
     art.set_dof_actuation_forces(state.efforts, state.articulation_indices)
+
+
+def compute(db):
+    state = db.per_instance_state
+    if getattr(state, "pre_step", None) is None:
+        state.context = omni.usd.get_context()
+        state.stage = state.context.get_stage()
+        state.ratios = np.asarray(db.inputs.dampingRatios).copy()
+        state.physics = omni.physics.core.get_physics_simulation_interface()
+        state.pre_step = state.physics.subscribe_physics_on_step_events(
+            pre_step=True, order=0, on_update=lambda _dt, _context: apply_control(state)
+        )
     return True
+
+
+def cleanup(db):
+    state = db.per_instance_state
+    state.pre_step = None
+    state.art = state.sim = None

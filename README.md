@@ -2,7 +2,7 @@
 
 在 Isaac Sim 6.0 中使用 **File → Open** 打开同目录的 `workspace_pi05.usda`。如果出现 **ScriptNode Warning**，在当前会话授权后点 **Play**。内嵌 Action Graph 会启用重力补偿和阻尼，无需运行独立控制脚本。
 
-场景包含天机双臂、舞肌双手、相机、桌面和三面围挡。初始关节角来自实机双臂读数，手指采用模型的初始姿态。
+场景包含天机双臂、舞肌双手、相机、桌面和三面围挡。右臂初始角度取自 53 段原始 LeRobot 录制首帧的逐关节中位数，左臂按机器人左右对称面镜像。手指采用模型的初始姿态。
 
 ## 场景文件
 
@@ -13,7 +13,7 @@
 | [`workspace_pi05_cameras.usda`](workspace_pi05_cameras.usda) | 加载完整仿真并附加头部、左腕和右腕的 RGB 相机。 |
 | [`workspace_pi05.usda`](workspace_pi05.usda) | 场景入口。内嵌 Action Graph，播放时启用重力补偿和阻尼。 |
 | [`workspace_pi05_impedance.usda`](workspace_pi05_impedance.usda) | 定义 PI05 对应的关节刚度与末端负载质量和质心。 |
-| [`workspace_measured_arms.usda`](workspace_measured_arms.usda) | 保存实测的双臂初始关节角、驱动目标和对应的连杆姿态。 |
+| [`workspace_measured_arms.usda`](workspace_measured_arms.usda) | 保存录制推导出的双臂初始关节角、驱动目标和对应的连杆姿态。 |
 | [`workspace_factory_robot.usda`](workspace_factory_robot.usda) | 装配舞肌双手，定义机械臂的质量、惯量、关节限位和碰撞形状。 |
 | [`workspace_appearance.usda`](workspace_appearance.usda) | 定义场景材质，并载入机器人、桌面和围挡的基础场景。 |
 
@@ -22,6 +22,8 @@
 ## RGB 相机预览
 
 打开相机场景后，从视口的 **Perspective** 菜单选择头部或腕部相机。头部相机固定在机架上，双腕相机随各自的末端连杆运动。光心和朝向来自安装关系，焦距、主点和畸变参数来自 [ROS 驱动的 CameraInfo](camera_rgb_driver_info.json)。
+
+右手和右腕相机组件绕右腕 TCP 的 Z 轴转回了 90°，安装位置与左侧近似镜像。
 
 下图为双臂初始姿态下的仿真画面。头部原图为 1280×720，双腕原图均为 848×480。[头部](camera_preview/head.png) · [左腕](camera_preview/left_wrist.png) · [右腕](camera_preview/right_wrist.png)
 

@@ -1,7 +1,7 @@
 #usda 1.0
 (
     defaultPrim = "Workspace"
-    doc = "Measured arms SDK frame 861384, Unix timestamp 1795748378.23662. Finger joints retain source asset pose."
+    doc = "PI05 startup poses. Right arm uses the first-frame joint-wise median of 53 recorded LeRobot episodes. Left arm is reflected across the robot sagittal plane. Finger joints retain the source asset pose."
     metersPerUnit = 1
     subLayers = [
         @workspace_factory_robot.usda@
@@ -17,200 +17,203 @@ over "Workspace"
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = 55.000458
-            float state:angular:physics:position = 55.000458
+            float drive:angular:physics:targetPosition = 56.0729
+            float state:angular:physics:position = 56.0729
         }
 
         over "Joint2_L" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = -65.000626
-            float state:angular:physics:position = -65.000626
+            float drive:angular:physics:targetPosition = -67.8951
+            float state:angular:physics:position = -67.8951
         }
 
         over "Joint3_L" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = -69.99886
-            float state:angular:physics:position = -69.99886
+            float drive:angular:physics:targetPosition = -74.6891
+            float state:angular:physics:position = -74.6891
         }
 
         over "Joint4_L" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = -59.999477
-            float state:angular:physics:position = -59.999477
+            float drive:angular:physics:targetPosition = -60.4138
+            float state:angular:physics:position = -60.4138
         }
 
         over "Joint5_L" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = 60.000294
-            float state:angular:physics:position = 60.000294
+            float drive:angular:physics:targetPosition = 153.53151
+            float state:angular:physics:position = 153.53151
         }
 
         over "Joint6_L" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = 0.00035705566
-            float state:angular:physics:position = 0.00035705566
+            float drive:angular:physics:targetPosition = -0.9173
+            float state:angular:physics:position = -0.9173
         }
 
         over "Joint7_L" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = -0.0000617981
-            float state:angular:physics:position = -0.0000617981
+            float drive:angular:physics:targetPosition = -1.4594
+            float state:angular:physics:position = -1.4594
         }
 
         over "Joint1_R" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = -55.000748
-            float state:angular:physics:position = -55.000748
+            float drive:angular:physics:targetPosition = -56.0729
+            float state:angular:physics:position = -56.0729
         }
 
         over "Joint2_R" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = -65.00036
-            float state:angular:physics:position = -65.00036
+            float drive:angular:physics:targetPosition = -67.8951
+            float state:angular:physics:position = -67.8951
         }
 
         over "Joint3_R" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = 69.99883
-            float state:angular:physics:position = 69.99883
+            float drive:angular:physics:targetPosition = 74.6891
+            float state:angular:physics:position = 74.6891
         }
 
         over "Joint4_R" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = -59.998493
-            float state:angular:physics:position = -59.998493
+            float drive:angular:physics:targetPosition = -60.4138
+            float state:angular:physics:position = -60.4138
         }
 
         over "Joint5_R" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = -59.999866
-            float state:angular:physics:position = -59.999866
+            float drive:angular:physics:targetPosition = -153.53151
+            float state:angular:physics:position = -153.53151
         }
 
         over "Joint6_R" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = 0.002231598
-            float state:angular:physics:position = 0.002231598
+            float drive:angular:physics:targetPosition = -0.9173
+            float state:angular:physics:position = -0.9173
         }
 
         over "Joint7_R" (
             prepend apiSchemas = ["PhysicsJointStateAPI:angular"]
         )
         {
-            float drive:angular:physics:targetPosition = 0.00050811766
-            float state:angular:physics:position = 0.00050811766
+            float drive:angular:physics:targetPosition = 1.4594
+            float state:angular:physics:position = 1.4594
         }
 
         over "Link1_L"
         {
-            matrix4d xformOp:transform = ( (0, 0.573569894474699, -0.8191566249211959, 0), (0, -0.8191566249211959, -0.573569894474699, 0), (-1.0000000000000009, 0, 0, 0), (-0.2145000000000002, -0.010000021078113956, 1.2748573872053925, 1) )
+            matrix4d xformOp:transform = ( (0, 0.5581376320756307, -0.8297483857537837, 0), (0, -0.8297483857537837, -0.5581376320756307, 0), (-1.0000000000000009, 0, 0, 0), (-0.2145000000000002, -0.010000021348438708, 1.2748573876066507, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link2_L"
         {
-            matrix4d xformOp:transform = ( (0.9063123709564365, 0.24239270707446522, -0.34618435201938597, 0), (-0.4226083648160206, 0.5198347974501354, -0.7424109438665794, 0), (0.000003674066874867145, 0.8191566256915312, 0.5735698933627593, 0), (-0.21450000000000014, -0.010000021078114223, 1.2748573872053923, 0.9999999999999999) )
+            matrix4d xformOp:transform = ( (0.926496421040095, 0.21002631867316654, -0.31223912071826776, 0), (-0.37630349856043066, 0.5171137001049002, -0.7687581914312076, 0), (0.0000036741359860370526, 0.8297483865199864, 0.5581376309244714, 0), (-0.21450000000000014, -0.010000021348439105, 1.2748573876066507, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link3_L"
         {
-            matrix4d xformOp:transform = ( (0.3099959764303378, 0.8526593538955967, 0.4205644466561252, 0), (0.8516482002113629, -0.05241098935945539, -0.5214867611607525, 0), (-0.4226083660977749, 0.5198317873719407, -0.7424130507791615, 0), (-0.335788600702197, 0.13919256579007577, 1.061785446315684, 0.9999999999999999) )
+            matrix4d xformOp:transform = ( (0.24464965141574774, 0.8557589234391053, 0.4558762389529968, 0), (0.8936118955812464, -0.016529087056964785, -0.4485360391024882, 0), (-0.3763034999051298, 0.5171106510516509, -0.7687602417435945, 0), (-0.3224991040868425, 0.13841161058166845, 1.054223786665894, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link4_L"
         {
-            matrix4d xformOp:transform = ( (-0.5209939915594287, 0.023849136455116916, -0.8532271376445307, 0), (-0.05715933451957302, -0.9983405080199377, 0.006997196945155832, 0), (-0.8516443697752588, 0.052415344614846905, 0.5214925789251027, 0), (-0.3302086729629622, 0.15454043348102528, 1.0693556066907506, 0.9999999999999998) )
+            matrix4d xformOp:transform = ( (-0.4480363717563267, 0.027170800842556058, -0.8936023899978426, 0), (-0.026961605828905413, -0.9994940279109196, -0.016872365559470547, 0), (-0.8936087154071216, 0.016533475085402705, 0.44854221313847487, 0), (-0.31809541020376836, 0.15381527051942528, 1.0624295593062274, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link5_L"
         {
-            matrix4d xformOp:transform = ( (0.9980425749688638, -0.057317187403637074, -0.025017389425904285, 0), (-0.025377408468121636, -0.0055615717740782385, -0.9996624553417419, 0), (0.0571586366672747, 0.9983404905889253, -0.0070053799304533905, 0), (-0.3216385341416021, 0.46844863748142057, 1.0518003990529354, 0.9999999999999994) )
+            matrix4d xformOp:transform = ( (-0.0027868436879533026, 0.016945444075040297, -0.9998525530420984, 0), (-0.999632602401842, 0.026910753212422804, 0.0032422892803461445, 0), (0.026961599628415645, 0.9994941666887707, 0.016864152521432873, 0), (-0.31769412031581945, 0.46814546966443976, 1.0516426405392663, 0.9999999999999999) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link6_L"
         {
-            matrix4d xformOp:transform = ( (0.0571487510513757, 0.9983410582669346, -0.007005132109796132, 0), (-0.9980430478531549, 0.05730731926469823, 0.025021130778042817, 0), (0.02538107448379325, 0.005561361249586825, 0.9996623634409016, 0), (-0.3216385341416021, 0.4684486374814207, 1.0518003990529357, 0.9999999999999992) )
+            matrix4d xformOp:transform = ( (0.02691348182621263, 0.9996373572077285, 0.0008588038680199625, 0), (0.003221693276196976, -0.0009459198225413582, 0.999994383030255, 0), (0.9996325921684227, -0.026910690598062705, -0.0032459619406523497, 0), (-0.317694120315819, 0.4681454696644398, 1.051642640539266, 0.9999999999999994) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link7_L"
         {
-            matrix4d xformOp:transform = ( (0.02538092620016237, 0.0055587709293168355, 0.9996623816133257, 0), (-0.05714515088834665, -0.9983412831880228, 0.007002446453209246, 0), (0.9980432577658488, -0.05730365215276643, -0.02502115649564916, 0), (-0.321638534141602, 0.4684486374814208, 1.0518003990529359, 0.9999999999999991) )
+            matrix4d xformOp:transform = ( (0.9999937776061453, -0.0014462897375375483, -0.003222945848398353, 0), (-0.0014492131425342383, -0.9999984662388226, -0.0009448554833111105, 0), (-0.0032215938364449637, 0.0009495916875106439, -0.9999943798708253, 0), (-0.31769412031581856, 0.4681454696644399, 1.0516426405392656, 0.9999999999999991) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link1_R"
         {
-            matrix4d xformOp:transform = ( (0, 0.5735657421300308, -0.8191595323591304, 0), (0, 0.8191595323591304, 0.5735657421300308, 0), (1.0000000000000009, 0, 0, 0), (0.2145000000000002, -0.010000021078188185, 1.2748573872055005, 1) )
+            matrix4d xformOp:transform = ( (0, 0.5581376245801468, -0.8297483907956876, 0), (0, 0.8297483907956876, 0.5581376245801468, 0), (1.0000000000000009, 0, 0, 0), (0.2145000000000002, -0.010000021348438847, 1.2748573876066507, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link2_R"
         {
-            matrix4d xformOp:transform = ( (-0.9063104004953166, 0.24239883229281475, -0.3461852218567254, 0), (0.4226125905784298, 0.5198273621358613, -0.7424137445417985, 0), (-0.0000036740668685600885, -0.819159531577744, -0.5735657432342293, 0), (0.21450000000000022, -0.010000021078188221, 1.2748573872055005, 1) )
+            matrix4d xformOp:transform = ( (-0.9264964202640249, 0.2100319668321577, -0.3122353237367412, 0), (0.37630350047119254, 0.5171114004492869, -0.7687597373796874, 0), (-0.0000036741359860509304, -0.8297483900182834, -0.5581376257237715, 0), (0.2145000000000003, -0.010000021348438793, 1.2748573876066507, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link3_R"
         {
-            matrix4d xformOp:transform = ( (-0.3099917674114188, 0.8526605617910532, 0.420565100172431, 0), (0.8516476365900191, 0.052405374145037584, 0.5214882459332243, 0), (0.42261258931797197, 0.5198303722177235, -0.7424116376344441, 0), (0.33578981349601056, 0.1391904318548026, 1.0617846425220043, 1) )
+            matrix4d xformOp:transform = ( (-0.24464522875694217, 0.8557567527163515, 0.45588268715994557, 0), (0.8936131067068548, 0.016522635962872522, 0.44853386387166444, 0), (0.3763034991484131, 0.5171144494955767, -0.7687576870569356, 0), (0.32249910463523357, 0.13841095058050498, 1.0542233429786805, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link4_R"
         {
-            matrix4d xformOp:transform = ( (0.5209847481912506, 0.023829427127708115, -0.8532333323987124, 0), (0.057136857593480674, -0.9983417341277003, 0.007005829492719717, 0), (-0.8516514669532238, -0.05240101887203419, -0.5214824281340923, 0), (0.33020996151911003, 0.15453832128788403, 1.0693548146603624, 0.9999999999999999) )
+            matrix4d xformOp:transform = ( (0.44802188753758554, 0.02717494217988773, -0.8936095260517799, 0), (0.02694951769470853, -0.999494168182332, -0.016883364679398025, 0), (-0.8936162867881732, -0.016518247963224743, -0.44852768976741325, 0), (0.3180954903600149, 0.15381457144525063, 1.0624292316867336, 0.9999999999999997) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link5_R"
         {
-            matrix4d xformOp:transform = ( (-0.9980446589114846, -0.05728841230822398, -0.024998103818733675, 0), (-0.025358218044203622, 0.00556830706930085, 0.9996629561646679, 0), (-0.05712990061252639, 0.9983421017049904, -0.007010182902687982, 0), (0.3216467140718572, 0.46844655551821324, 1.0517967848970646, 0.9999999999999999) )
+            matrix4d xformOp:transform = ( (0.0027704245768763666, 0.016959273421803263, -0.9998524116854376, 0), (-0.9996331087713283, -0.026892129871062813, -0.003226003702396424, 0), (-0.02694294105410569, 0.9994944285271701, 0.016878448071425516, 0), (0.31769773543014335, 0.4681448891795437, 1.0516456381944301, 0.9999999999999997) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link6_R"
         {
-            matrix4d xformOp:transform = ( (-0.0570873619622962, 0.9983445425403721, -0.007009117572648084, 0), (0.9980471861310651, 0.057245840529991696, 0.024994730616350536, 0), (0.02535455202057742, -0.0055685174887481195, -0.9996630479811746, 0), (0.3216467140718571, 0.468446555518213, 1.051796784897064, 0.9999999999999996) )
+            matrix4d xformOp:transform = ( (-0.02689520671943466, 0.9996378371757837, 0.0008730994656600992, 0), (-0.003197634861288462, -0.0009595456024407608, 0.9999944942561267, 0), (0.9996331189309556, 0.026892192535858103, 0.003222331042571098, 0), (0.31769773543014335, 0.4681448891795436, 1.05164563819443, 0.9999999999999993) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Link7_R"
         {
-            matrix4d xformOp:transform = ( (0.02535526794881156, -0.005581038259517754, -0.9996629599983077, 0), (0.05708337794049633, -0.9983446828930991, 0.007021563066686209, 0), (-0.9980473958175842, -0.05724217340541119, -0.024994756375398663, 0), (0.3216467140718571, 0.4684465555182132, 1.051796784897064, 0.9999999999999996) )
+            matrix4d xformOp:transform = ( (0.9999938493071431, 0.001420439053855243, 0.0031989515623545746, 0), (0.0014235840948030381, -0.9999984854114932, -0.0009585681880510605, 0), (0.003197535515649306, 0.0009632174692221619, -0.999994491044086, 0), (0.31769773543014324, 0.4681448891795437, 1.05164563819443, 0.9999999999999993) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
         over "Wuji_left"
         {
+            matrix4d xformOp:transform = ( (0.007178946963472948, 0.9982766143010177, 0.058243060651246785, 0), (-0.9997268132800291, 0.008460650360254523, -0.02178953060708506, 0), (-0.022244720570536117, -0.05807085476056324, 0.9980645724303987, 0), (-0.11237848992358357, -0.04706221229788626, 1.6423038118799678, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
             over "left_palm_link"
             {
                 matrix4d xformOp:transform = ( (-0.057318040490945986, 0.025018121981747403, -0.9980425076123149, 0), (-0.005547382156568133, 0.9996625360297986, 0.0253773357846973, 0), (0.998340520560191, 0.006991235198831619, -0.05715984501283908, 0), (0.5992399162307132, 0.22389797970092518, -0.6217713560257908, 0.9999999999999996) )
@@ -370,6 +373,9 @@ over "Workspace"
 
         over "Wuji_right"
         {
+            matrix4d xformOp:transform = ( (-0.021811148481898968, 0.007960116589297225, -0.9997304509282138, 0), (0.05581765343808432, 0.9984182785320906, 0.006731823500998683, 0), (0.9982026871152536, -0.05565584953453716, -0.022220956126808654, 0), (0.9095807673151741, -0.04609406056318221, 1.2577635363864792, 0.9999999999999998) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
             over "right_palm_link"
             {
                 matrix4d xformOp:transform = ( (0.9996628052958244, -0.005591681578968536, 0.025359022035350877, 0), (0.024997791578602564, -0.05725711295849531, -0.9980464628425634, 0), (0.007032774130675583, 0.9983437666342625, -0.057098020600180655, 0), (0.22390221447857672, 0.5998323071954392, -0.6212058577177715, 0.9999999999999996) )

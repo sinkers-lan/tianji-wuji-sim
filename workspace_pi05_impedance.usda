@@ -58,10 +58,10 @@ over "Workspace"
 
         over "Link7_R"
         {
-            point3f physics:centerOfMass = (-0.0027607519, -0.06273446, 0.017106993)
-            float3 physics:diagonalInertia = (0.00076776877, 0.0032912379, 0.0035045142)
+            point3f physics:centerOfMass = (-0.011878308, -0.06273446, 0.0025761353)
+            float3 physics:diagonalInertia = (0.0010296175, 0.0032389893, 0.0036472823)
             float physics:mass = 1.155
-            quatf physics:principalAxes = (-0.5660637, -0.3904405, 0.5767342, 0.4410281)
+            quatf physics:principalAxes = (-0.48698604, -0.3704482, 0.46208918, 0.6419395)
         }
 
         over "Joint1_R"

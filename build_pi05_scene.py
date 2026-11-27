@@ -12,7 +12,8 @@ from pxr import Gf, Sdf, Usd, UsdGeom, UsdPhysics
 STIFFNESS = [2, 2, 2, 1.6, 1, 1, 1]  # N m / degree
 DAMPING_RATIOS = [0.3, 0.3, 0.3, 0.2, 0.2, 0.2, 0.2]
 PAYLOADS = {"L": (0.783, (13.574, 4.605, 99.013)),
-            "R": (0.987, (17.320, 6.692, 66.900))}
+            # Right tool assembly was rotated +90 degrees around the TCP Z axis.
+            "R": (0.987, (-6.692, 17.320, 66.900))}
 
 
 def parallel_axis(mass, offset):
@@ -107,12 +108,13 @@ def build_autoplay_scene():
     graph.CreateAttribute("evaluator:type", Sdf.ValueTypeNames.Token).Set("execution")
     graph.CreateAttribute("fabricCacheBacking", Sdf.ValueTypeNames.Token).Set("Shared")
     graph.CreateAttribute("fileFormatVersion", Sdf.ValueTypeNames.Int2).Set(Gf.Vec2i(1, 6))
-    graph.CreateAttribute("pipelineStage", Sdf.ValueTypeNames.Token).Set("pipelineStageOnDemand")
+    graph.CreateAttribute("pipelineStage", Sdf.ValueTypeNames.Token).Set("pipelineStageSimulation")
 
-    tick = stage.DefinePrim(graph.GetPath().AppendChild("OnPhysicsStep"), "OmniGraphNode")
-    tick.CreateAttribute("node:type", Sdf.ValueTypeNames.Token).Set("isaacsim.core.nodes.OnPhysicsStep")
+    tick = stage.DefinePrim(graph.GetPath().AppendChild("OnTick"), "OmniGraphNode")
+    tick.CreateAttribute("node:type", Sdf.ValueTypeNames.Token).Set("omni.graph.action.OnTick")
     tick.CreateAttribute("node:typeVersion", Sdf.ValueTypeNames.Int).Set(1)
-    pulse = tick.CreateAttribute("outputs:step", Sdf.ValueTypeNames.UInt)
+    tick.CreateAttribute("inputs:onlyPlayback", Sdf.ValueTypeNames.Bool).Set(False)
+    pulse = tick.CreateAttribute("outputs:tick", Sdf.ValueTypeNames.UInt)
 
     control = stage.DefinePrim(graph.GetPath().AppendChild("Impedance"), "OmniGraphNode")
     control.CreateAttribute("node:type", Sdf.ValueTypeNames.Token).Set("omni.graph.scriptnode.ScriptNode")
