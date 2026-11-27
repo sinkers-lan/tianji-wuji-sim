@@ -1,0 +1,903 @@
+#usda 1.0
+(
+    defaultPrim = "Workspace"
+    subLayers = [
+        @workspace_appearance.usda@
+    ]
+)
+
+over "Workspace"
+{
+    over "Robot"
+    {
+        over "Base"
+        {
+            def Mesh "Base_R_collision0" (
+                active = true
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+                prepend references = </Workspace/Environment/Base_R_collision0>
+            )
+            {
+                uniform token physics:approximation = "sdf"
+                matrix4d xformOp:transform = ( (0, 1.0000000000000009, 0, 0), (0, 0, 1.0000000000000009, 0), (1.0000000000000009, 0, 0, 0), (0.04000000000000002, -0.010000000000000002, 1.2748573760000004, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "Base_L_collision0" (
+                active = true
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+                prepend references = </Workspace/Environment/Base_L_collision0>
+            )
+            {
+                uniform token physics:approximation = "sdf"
+                matrix4d xformOp:transform = ( (0, 1.0000000000000009, 0, 0), (0, 0, -1.0000000000000009, 0), (-1.0000000000000009, 0, 0, 0), (-0.04000000000000002, -0.010000000000000002, 1.2748573760000004, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+
+        over "right_finger2_link1" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger1_link4" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger4_link1" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger4_link4" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger3_link3" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger4_link2" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger2_link2" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger3_link4" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger5_link3" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger5_link1" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger3_link2" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger5_link2" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger2_link4" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger3_link1" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger2_link3" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger1_link3" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger1_link1" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger4_link3" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger5_link4" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger1_link2" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger1_joint1" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger1_joint2" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger1_joint3" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger1_joint4" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger2_joint1" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger2_joint2" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger2_joint3" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger2_joint4" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger3_joint1" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger3_joint2" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger3_joint3" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger3_joint4" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger4_joint1" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger4_joint2" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger4_joint3" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger4_joint4" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger5_joint1" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger5_joint2" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger5_joint3" (
+            active = false
+        )
+        {
+        }
+
+        over "right_finger5_joint4" (
+            active = false
+        )
+        {
+        }
+
+        over "Link7_R"
+        {
+            point3f physics:centerOfMass = (-0.00009108, -0.03153255, 0.00889371)
+            float3 physics:diagonalInertia = (0.00074526336, 0.0015391075, 0.0017369092)
+            float physics:mass = 0.68606
+            quatf physics:principalAxes = (0.5989946, 0.37400916, -0.59574777, -0.38263193)
+
+            over "right_palm_link_visual0" (
+                active = false
+            )
+            {
+            }
+
+            over "right_palm_link_collision0" (
+                active = false
+            )
+            {
+            }
+
+            over "Link7_R_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        def Xform "Wuji_right" (
+            prepend references = @official_wuji/right/wujihand.usd@
+        )
+        {
+            matrix4d xformOp:transform = ( (-0.000003673164625990978, 0.000011019628798521417, -0.9999999999325392, 0), (0.000014692820412597495, 0.9999999998313459, 0.00001101957482829518, 0), (0.9999999998853154, -0.000014692779935010795, -0.0000036733265346511138, 0), (0.9364999917011959, -0.01056537781731811, 1.274854585485207, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            over "root_joint" (
+                active = false
+            )
+            {
+            }
+        }
+
+        def PhysicsFixedJoint "Mount_right"
+        {
+            rel physics:body0 = </Workspace/Robot/Link7_R>
+            rel physics:body1 = </Workspace/Robot/Wuji_right/right_palm_link>
+            point3f physics:localPos0 = (-2.220446e-16, -0.121, -0.0005636)
+            quatf physics:localRot0 = (0.70710677, 0.70710677, 1.2168205e-15, -1.216822e-15)
+        }
+
+        over "Link1_R"
+        {
+            point3f physics:centerOfMass = (0.00002347, 0.0055715, -0.03075998)
+            float3 physics:diagonalInertia = (0.0018487438, 0.004922845, 0.005297541)
+            float physics:mass = 1.9705
+            quatf physics:principalAxes = (-0.47901478, -0.51992214, 0.5273388, -0.4713169)
+
+            over "Link1_R_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        over "Joint1_R"
+        {
+            float physics:lowerLimit = -178.0008
+            float physics:upperLimit = 178.0008
+        }
+
+        over "Link2_R"
+        {
+            point3f physics:centerOfMass = (0.00013483, 0.0617046, 0.00950639)
+            float3 physics:diagonalInertia = (0.0033837387, 0.01121563, 0.0119493315)
+            float physics:mass = 2.24398
+            quatf physics:principalAxes = (0.45490935, 0.5415347, -0.4549599, -0.54111844)
+
+            over "Link2_R_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        over "Joint2_R"
+        {
+            float physics:lowerLimit = -120.00028
+            float physics:upperLimit = 120.00028
+        }
+
+        over "Link3_R"
+        {
+            point3f physics:centerOfMass = (0.00968562, 0.00246599, -0.04627302)
+            float3 physics:diagonalInertia = (0.0016338008, 0.0073078917, 0.007652147)
+            float physics:mass = 1.9242
+            quatf physics:principalAxes = (0.4616457, 0.6052822, 0.41140082, -0.5012645)
+
+            over "Link3_R_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        over "Joint3_R"
+        {
+            float physics:lowerLimit = -178.0008
+            float physics:upperLimit = 178.0008
+        }
+
+        over "Link4_R"
+        {
+            point3f physics:centerOfMass = (0.00850411, -0.04718223, 0.00941509)
+            float3 physics:diagonalInertia = (0.0019822784, 0.0053587537, 0.006032438)
+            float physics:mass = 1.6085
+            quatf physics:principalAxes = (-0.57929987, -0.2887659, 0.46969843, 0.600341)
+
+            over "Link4_R_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        over "Joint4_R"
+        {
+            float physics:lowerLimit = -144.99843
+            float physics:upperLimit = 60.00014
+        }
+
+        over "Link5_R"
+        {
+            point3f physics:centerOfMass = (-0.00051127, -0.00101064, -0.11271739)
+            float3 physics:diagonalInertia = (0.0024343596, 0.0056426222, 0.006269238)
+            float physics:mass = 2.0883
+            quatf physics:principalAxes = (0.70193064, -0.015096225, 0.71148765, 0.029168306)
+
+            over "Link5_R_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        over "Joint5_R"
+        {
+            float physics:lowerLimit = -178.0008
+            float physics:upperLimit = 178.0008
+        }
+
+        over "Link6_R"
+        {
+            point3f physics:centerOfMass = (0.00032659, -0.00531336, 0.00030182)
+            float3 physics:diagonalInertia = (0.00042505702, 0.00046036238, 0.0005173506)
+            float physics:mass = 0.72496
+            quatf physics:principalAxes = (0.5077118, 0.50495136, -0.47583434, 0.5107196)
+
+            over "Link6_R_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        over "Joint6_R"
+        {
+            float physics:lowerLimit = -60.00014
+            float physics:upperLimit = 60.00014
+        }
+
+        over "Joint7_R"
+        {
+            float physics:lowerLimit = -90.00021
+            float physics:upperLimit = 90.00021
+        }
+
+        over "left_finger4_link1" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger1_link3" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger1_link1" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger4_link2" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger2_link1" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger3_link1" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger5_link3" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger4_link4" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger3_link3" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger2_link3" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger5_link2" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger2_link4" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger3_link4" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger2_link2" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger5_link1" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger5_link4" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger1_link2" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger1_link4" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger4_link3" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger3_link2" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger1_joint1" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger1_joint2" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger1_joint3" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger1_joint4" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger2_joint1" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger2_joint2" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger2_joint3" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger2_joint4" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger3_joint1" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger3_joint2" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger3_joint3" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger3_joint4" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger4_joint1" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger4_joint2" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger4_joint3" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger4_joint4" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger5_joint1" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger5_joint2" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger5_joint3" (
+            active = false
+        )
+        {
+        }
+
+        over "left_finger5_joint4" (
+            active = false
+        )
+        {
+        }
+
+        over "Link7_L"
+        {
+            point3f physics:centerOfMass = (-0.00009108, -0.03153255, 0.00889371)
+            float3 physics:diagonalInertia = (0.00074526336, 0.0015391075, 0.0017369092)
+            float physics:mass = 0.68606
+            quatf physics:principalAxes = (0.5989946, 0.37400916, -0.59574777, -0.38263193)
+
+            over "left_palm_link_visual0" (
+                active = false
+            )
+            {
+            }
+
+            over "left_palm_link_collision0" (
+                active = false
+            )
+            {
+            }
+
+            over "Link7_L_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        def Xform "Wuji_left" (
+            prepend references = @official_wuji/left/wujihand.usd@
+        )
+        {
+            matrix4d xformOp:transform = ( (-0.000014692820412597503, 0.9999999998313457, -0.000011019574831736871, 0), (-0.0000036731646259909266, -0.000011019628801963107, -0.999999999932539, 0), (-0.9999999998853154, -0.000014692779935010795, 0.0000036733265346511138, 0), (-0.9365000020518975, -0.010001784026973994, 1.2742966603042003, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            over "root_joint" (
+                active = false
+            )
+            {
+            }
+        }
+
+        def PhysicsFixedJoint "Mount_left"
+        {
+            rel physics:body0 = </Workspace/Robot/Link7_L>
+            rel physics:body1 = </Workspace/Robot/Wuji_left/left_palm_link>
+            point3f physics:localPos0 = (-0.0005635, -0.121, -1.7347235e-18)
+            quatf physics:localRot0 = (0.5, 0.5, -0.5, 0.5)
+        }
+
+        over "Link1_L"
+        {
+            point3f physics:centerOfMass = (0.00002347, 0.0055715, -0.03075998)
+            float3 physics:diagonalInertia = (0.0018487438, 0.004922845, 0.005297541)
+            float physics:mass = 1.9705
+            quatf physics:principalAxes = (-0.47901478, -0.51992214, 0.5273388, -0.4713169)
+
+            over "Link1_L_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        over "Joint1_L"
+        {
+            float physics:lowerLimit = -178.0008
+            float physics:upperLimit = 178.0008
+        }
+
+        over "Link2_L"
+        {
+            point3f physics:centerOfMass = (0.00013483, 0.0617046, 0.00950639)
+            float3 physics:diagonalInertia = (0.0033837387, 0.01121563, 0.0119493315)
+            float physics:mass = 2.24398
+            quatf physics:principalAxes = (0.45490935, 0.5415347, -0.4549599, -0.54111844)
+
+            over "Link2_L_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        over "Joint2_L"
+        {
+            float physics:lowerLimit = -120.00028
+            float physics:upperLimit = 120.00028
+        }
+
+        over "Link3_L"
+        {
+            point3f physics:centerOfMass = (0.00968562, 0.00246599, -0.04627302)
+            float3 physics:diagonalInertia = (0.0016338008, 0.0073078917, 0.007652147)
+            float physics:mass = 1.9242
+            quatf physics:principalAxes = (0.4616457, 0.6052822, 0.41140082, -0.5012645)
+
+            over "Link3_L_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        over "Joint3_L"
+        {
+            float physics:lowerLimit = -178.0008
+            float physics:upperLimit = 178.0008
+        }
+
+        over "Link4_L"
+        {
+            point3f physics:centerOfMass = (0.00850411, -0.04718223, 0.00941509)
+            float3 physics:diagonalInertia = (0.0019822784, 0.0053587537, 0.006032438)
+            float physics:mass = 1.6085
+            quatf physics:principalAxes = (-0.57929987, -0.2887659, 0.46969843, 0.600341)
+
+            over "Link4_L_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        over "Joint4_L"
+        {
+            float physics:lowerLimit = -144.99843
+            float physics:upperLimit = 60.00014
+        }
+
+        over "Link5_L"
+        {
+            point3f physics:centerOfMass = (0.00051127, 0.00101064, -0.11271739)
+            float3 physics:diagonalInertia = (0.0024343596, 0.0056426222, 0.006269238)
+            float physics:mass = 2.0883
+            quatf physics:principalAxes = (-0.015096225, 0.70193064, 0.029168306, 0.71148765)
+
+            over "Link5_L_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        over "Joint5_L"
+        {
+            float physics:lowerLimit = -178.0008
+            float physics:upperLimit = 178.0008
+        }
+
+        over "Link6_L"
+        {
+            point3f physics:centerOfMass = (0.00032659, 0.00531336, -0.00030182)
+            float3 physics:diagonalInertia = (0.00042505702, 0.00046036238, 0.0005173506)
+            float physics:mass = 0.72496
+            quatf physics:principalAxes = (0.5107196, 0.47583434, -0.50495136, 0.5077118)
+
+            over "Link6_L_collision0" (
+                prepend apiSchemas = ["PhysxSDFMeshCollisionAPI"]
+            )
+            {
+                uniform token physics:approximation = "sdf"
+            }
+        }
+
+        over "Joint6_L"
+        {
+            float physics:lowerLimit = -60.00014
+            float physics:upperLimit = 60.00014
+        }
+
+        over "Joint7_L"
+        {
+            float physics:lowerLimit = -90.00021
+            float physics:upperLimit = 90.00021
+        }
+    }
+
+    over "Environment"
+    {
+        over "Base_R_collision0" (
+            active = false
+        )
+        {
+        }
+
+        over "Base_L_collision0" (
+            active = false
+        )
+        {
+        }
+    }
+
+    over "PhysicsScene" (
+        prepend apiSchemas = ["PhysxSceneAPI"]
+    )
+    {
+        uint physxScene:gpuCollisionStackSize = 1073741824
+        uint physxScene:gpuFoundLostAggregatePairsCapacity = 8192
+    }
+}

@@ -1,0 +1,229 @@
+#usda 1.0
+(
+    defaultPrim = "Workspace"
+    subLayers = [
+        @robot_workspace_wall_aligned_full_column.usdc@
+    ]
+)
+
+over "Workspace"
+{
+    def "Looks"
+    {
+        def Material "ArmShell"
+        {
+            token outputs:surface.connect = </Workspace/Looks/ArmShell/Surface.outputs:surface>
+
+            def Shader "Surface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.78, 0.78, 0.74)
+                float inputs:metallic = 0.04
+                float inputs:roughness = 0.33
+                token outputs:surface
+            }
+        }
+
+        def Material "WristBracket"
+        {
+            token outputs:surface.connect = </Workspace/Looks/WristBracket/Surface.outputs:surface>
+
+            def Shader "Surface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor = (0.035, 0.04, 0.045)
+                float inputs:metallic = 0.25
+                float inputs:roughness = 0.52
+                token outputs:surface
+            }
+        }
+    }
+
+    over "Robot"
+    {
+        over "Link4_R"
+        {
+            over "Link4_R_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+        }
+
+        over "Link3_R"
+        {
+            over "Link3_R_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+        }
+
+        over "Link1_R"
+        {
+            over "Link1_R_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+        }
+
+        over "Link7_R"
+        {
+            over "Link7_R_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+
+            over "camera_bracket_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/WristBracket>
+            }
+
+            over "hand_bracket_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/WristBracket>
+            }
+        }
+
+        over "Link2_L"
+        {
+            over "Link2_L_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+        }
+
+        over "Link5_L"
+        {
+            over "Link5_L_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+        }
+
+        over "Link4_L"
+        {
+            over "Link4_L_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+        }
+
+        over "Link3_L"
+        {
+            over "Link3_L_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+        }
+
+        over "Link7_L"
+        {
+            over "Link7_L_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+
+            over "left_camera_bracket_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/WristBracket>
+            }
+
+            over "left_hand_bracket_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/WristBracket>
+            }
+        }
+
+        over "Link5_R"
+        {
+            over "Link5_R_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+        }
+
+        over "Link2_R"
+        {
+            over "Link2_R_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+        }
+
+        over "Link6_L"
+        {
+            over "Link6_L_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+        }
+
+        over "Link1_L"
+        {
+            over "Link1_L_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+        }
+
+        over "Link6_R"
+        {
+            over "Link6_R_visual0" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Workspace/Looks/ArmShell>
+            }
+        }
+    }
+
+    over "Environment"
+    {
+        over "Base_L_visual0" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Workspace/Looks/ArmShell>
+        }
+
+        over "Base_R_visual0" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Workspace/Looks/ArmShell>
+        }
+    }
+}

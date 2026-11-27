@@ -1,0 +1,102 @@
+#usda 1.0
+(
+    defaultPrim = "Workspace"
+    doc = "PI05 stiffness and payload mass/CoM. Left arm mirrors right-arm gains. Launch with play_pi05_scene.py for damping-ratio mapping and gravity compensation."
+    metersPerUnit = 1
+    subLayers = [
+        @workspace_measured_arms.usda@
+    ]
+    upAxis = "Z"
+)
+
+over "Workspace"
+{
+    over "Robot"
+    {
+        over "Link7_L"
+        {
+            point3f physics:centerOfMass = (-0.007468039, -0.06791063, 0.021249674)
+            float3 physics:diagonalInertia = (0.00078084297, 0.0052980846, 0.005480165)
+            float physics:mass = 0.95100003
+            quatf physics:principalAxes = (-0.54970086, -0.34984785, 0.60077465, 0.4631471)
+        }
+
+        over "Joint1_L"
+        {
+            float drive:angular:physics:stiffness = 2
+        }
+
+        over "Joint2_L"
+        {
+            float drive:angular:physics:stiffness = 2
+        }
+
+        over "Joint3_L"
+        {
+            float drive:angular:physics:stiffness = 2
+        }
+
+        over "Joint4_L"
+        {
+            float drive:angular:physics:stiffness = 1.6
+        }
+
+        over "Joint5_L"
+        {
+            float drive:angular:physics:stiffness = 1
+        }
+
+        over "Joint6_L"
+        {
+            float drive:angular:physics:stiffness = 1
+        }
+
+        over "Joint7_L"
+        {
+            float drive:angular:physics:stiffness = 1
+        }
+
+        over "Link7_R"
+        {
+            point3f physics:centerOfMass = (-0.0027607519, -0.06273446, 0.017106993)
+            float3 physics:diagonalInertia = (0.00076776877, 0.0032912379, 0.0035045142)
+            float physics:mass = 1.155
+            quatf physics:principalAxes = (-0.5660637, -0.3904405, 0.5767342, 0.4410281)
+        }
+
+        over "Joint1_R"
+        {
+            float drive:angular:physics:stiffness = 2
+        }
+
+        over "Joint2_R"
+        {
+            float drive:angular:physics:stiffness = 2
+        }
+
+        over "Joint3_R"
+        {
+            float drive:angular:physics:stiffness = 2
+        }
+
+        over "Joint4_R"
+        {
+            float drive:angular:physics:stiffness = 1.6
+        }
+
+        over "Joint5_R"
+        {
+            float drive:angular:physics:stiffness = 1
+        }
+
+        over "Joint6_R"
+        {
+            float drive:angular:physics:stiffness = 1
+        }
+
+        over "Joint7_R"
+        {
+            float drive:angular:physics:stiffness = 1
+        }
+    }
+}
