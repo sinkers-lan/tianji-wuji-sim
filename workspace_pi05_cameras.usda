@@ -1,0 +1,114 @@
+#usda 1.0
+(
+    defaultPrim = "Workspace"
+    metersPerUnit = 1
+    subLayers = [
+        @workspace_pi05.usda@
+    ]
+    upAxis = "Z"
+)
+
+over "Workspace"
+{
+    over "Environment"
+    {
+        def Camera "HeadRGB" (
+            prepend apiSchemas = ["OmniLensDistortionOpenCvPinholeAPI", "OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+        )
+        {
+            float2 clippingRange = (0.04, 10)
+            float exposure:fStop = 5
+            float exposure:responsivity = 1.1026709
+            float exposure:time = 0.02
+            float horizontalAperture = 104.82592
+            token omni:lensdistortion:model = "opencvPinhole"
+            float omni:lensdistortion:opencvPinhole:cx = 638.60547
+            float omni:lensdistortion:opencvPinhole:cy = 362.07568
+            float omni:lensdistortion:opencvPinhole:fx = 610.536
+            float omni:lensdistortion:opencvPinhole:fy = 610.7573
+            int2 omni:lensdistortion:opencvPinhole:imageSize = (1280, 720)
+            float omni:lensdistortion:opencvPinhole:k1 = -0.03268741
+            float omni:lensdistortion:opencvPinhole:k2 = 0.035558157
+            float omni:lensdistortion:opencvPinhole:k3 = -0.012404652
+            float omni:lensdistortion:opencvPinhole:k4 = 0
+            float omni:lensdistortion:opencvPinhole:k5 = 0
+            float omni:lensdistortion:opencvPinhole:k6 = 0
+            float omni:lensdistortion:opencvPinhole:p1 = -0.000002457466
+            float omni:lensdistortion:opencvPinhole:p2 = -0.00019344129
+            float verticalAperture = 58.96458
+            quatd xformOp:orient = (0.8872252702713013, 0.4613361358642578, 0.0002326617541257292, -0.0004514238389674574)
+            double3 xformOp:scale = (1, 1, 1)
+            double3 xformOp:translate = (-0.023749999701976776, 0.0051344106905162334, 1.3458647727966309)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+        }
+    }
+
+    over "Robot"
+    {
+        over "Link7_L"
+        {
+            def Camera "WristRGB" (
+                prepend apiSchemas = ["OmniLensDistortionOpenCvPinholeAPI", "OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+            )
+            {
+                float2 clippingRange = (0.04, 10)
+                float exposure:fStop = 5
+                float exposure:responsivity = 1.1026709
+                float exposure:time = 0.02
+                float horizontalAperture = 103.36858
+                token omni:lensdistortion:model = "opencvPinhole"
+                float omni:lensdistortion:opencvPinhole:cx = 426.2516
+                float omni:lensdistortion:opencvPinhole:cy = 235.02522
+                float omni:lensdistortion:opencvPinhole:fx = 410.18265
+                float omni:lensdistortion:opencvPinhole:fy = 410.14874
+                int2 omni:lensdistortion:opencvPinhole:imageSize = (848, 480)
+                float omni:lensdistortion:opencvPinhole:k1 = -1.0759697
+                float omni:lensdistortion:opencvPinhole:k2 = 0.63325375
+                float omni:lensdistortion:opencvPinhole:k3 = -0.123540066
+                float omni:lensdistortion:opencvPinhole:k4 = -1.05453
+                float omni:lensdistortion:opencvPinhole:k5 = 0.6059048
+                float omni:lensdistortion:opencvPinhole:k6 = -0.1130347
+                float omni:lensdistortion:opencvPinhole:p1 = -0.000009714867
+                float omni:lensdistortion:opencvPinhole:p2 = 0.00022080938
+                float verticalAperture = 58.51052
+                quatd xformOp:orient = (0.7631563544273376, -0.6403422355651855, 0.06654547899961472, 0.05591006577014923)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0.00286710262298584, -0.10232654213905334, 0.06804153323173523)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+
+        over "Link7_R"
+        {
+            def Camera "WristRGB" (
+                prepend apiSchemas = ["OmniLensDistortionOpenCvPinholeAPI", "OmniRtxCameraAutoExposureAPI_1", "OmniRtxCameraExposureAPI_1"]
+            )
+            {
+                float2 clippingRange = (0.04, 10)
+                float exposure:fStop = 5
+                float exposure:responsivity = 1.1026709
+                float exposure:time = 0.02
+                float horizontalAperture = 103.41884
+                token omni:lensdistortion:model = "opencvPinhole"
+                float omni:lensdistortion:opencvPinhole:cx = 423.98306
+                float omni:lensdistortion:opencvPinhole:cy = 235.76791
+                float omni:lensdistortion:opencvPinhole:fx = 409.98334
+                float omni:lensdistortion:opencvPinhole:fy = 409.65958
+                int2 omni:lensdistortion:opencvPinhole:imageSize = (848, 480)
+                float omni:lensdistortion:opencvPinhole:k1 = -1.184727
+                float omni:lensdistortion:opencvPinhole:k2 = 0.6752788
+                float omni:lensdistortion:opencvPinhole:k3 = -0.094411254
+                float omni:lensdistortion:opencvPinhole:k4 = -1.1642814
+                float omni:lensdistortion:opencvPinhole:k5 = 0.6478373
+                float omni:lensdistortion:opencvPinhole:k6 = -0.08334409
+                float omni:lensdistortion:opencvPinhole:p1 = 0.0003613887
+                float omni:lensdistortion:opencvPinhole:p2 = 0.00007654906
+                float verticalAperture = 58.538963
+                quatd xformOp:orient = (-0.4130000174045563, 0.4923436939716339, 0.4925634562969208, 0.5868644714355469)
+                double3 xformOp:scale = (1, 1, 1)
+                double3 xformOp:translate = (0.06804114580154419, -0.10232651233673096, 0.00286710262298584)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:orient", "xformOp:scale"]
+            }
+        }
+    }
+}

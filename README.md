@@ -6,10 +6,11 @@
 
 ## 场景文件
 
-仓库有 5 个 `.usda` 图层。在 Isaac Sim 中打开最上层的 [`workspace_pi05.usda`](workspace_pi05.usda)，其余图层会按表格顺序自动载入。
+仓库有 6 个 `.usda` 图层。查看三路相机时打开 [`workspace_pi05_cameras.usda`](workspace_pi05_cameras.usda)，查看机器人仿真时可以直接打开 [`workspace_pi05.usda`](workspace_pi05.usda)。入口会自动载入表格中位于其下方的图层。
 
 | 文件 | 用途 |
 | --- | --- |
+| [`workspace_pi05_cameras.usda`](workspace_pi05_cameras.usda) | 加载完整仿真并附加头部、左腕和右腕的 RGB 相机。 |
 | [`workspace_pi05.usda`](workspace_pi05.usda) | 场景入口。内嵌 Action Graph，播放时启用重力补偿和阻尼。 |
 | [`workspace_pi05_impedance.usda`](workspace_pi05_impedance.usda) | 定义 PI05 对应的关节刚度与末端负载质量和质心。 |
 | [`workspace_measured_arms.usda`](workspace_measured_arms.usda) | 保存实测的双臂初始关节角、驱动目标和对应的连杆姿态。 |
@@ -17,6 +18,16 @@
 | [`workspace_appearance.usda`](workspace_appearance.usda) | 定义场景材质，并载入机器人、桌面和围挡的基础场景。 |
 
 基础场景保存在 [`robot_workspace_wall_aligned_full_column.usdc`](robot_workspace_wall_aligned_full_column.usdc)。双手装配引用 `official_wuji/` 里的模型。移动或复制场景时请保留整个目录结构，图层和模型通过相对路径引用。
+
+## RGB 相机预览
+
+打开相机场景后，从视口的 **Perspective** 菜单选择头部或腕部相机。头部相机固定在机架上，双腕相机随各自的末端连杆运动。光心和朝向来自安装关系，焦距、主点和畸变参数来自 [ROS 驱动的 CameraInfo](camera_rgb_driver_info.json)。
+
+下图为双臂初始姿态下的仿真画面。头部原图为 1280×720，双腕原图均为 848×480。[头部](camera_preview/head.png) · [左腕](camera_preview/left_wrist.png) · [右腕](camera_preview/right_wrist.png)
+
+![上方为头部画面，下方依次为左腕和右腕画面](camera_preview/rgb_camera_views.jpg)
+
+三路相机都使用 4 cm 的近裁剪距离，以避开 CAD 相机外壳造成的遮挡。光心前 4 cm 内的物体会被裁掉。
 
 ## 控制与来源
 
